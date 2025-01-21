@@ -1,0 +1,136 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.movieDetails {
+    background: #1f2937;
+    border-radius: 1rem;
+    max-width: 1000px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.closeButton {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 2rem 0;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    gap: 3rem;
+}
+
+.posterContainer img {
+    width: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    color: #fff;
+}
+
+.info dl {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0;
+}
+
+.info dt {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info dd {
+    margin: 0.5rem 0 0 0;
+    color: #fff;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 0.5rem;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .posterContainer {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .movieDetails {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .movieDetails {
+        padding: 1rem;
+    }
+
+    .closeButton {
+        top: 1rem;
+        right: 1rem;
+    }
+}
